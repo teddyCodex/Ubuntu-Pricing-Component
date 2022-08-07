@@ -41,6 +41,9 @@ body {
   height: 100vh;
   overflow-y: hidden;
   font-family: "Montserrat", sans-serif;
+  background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: top right, bottom left;
 }
 
 /* STYLING THE MAIN HTML */
@@ -277,6 +280,10 @@ input:checked + .slider:before {
   .card:nth-of-type(2) {
     width: 30rem;
     height: 40rem;
+  }
+  body {
+    background-image: url(images/bg-top.svg);
+    background-position: top right;
   }
 }
 
