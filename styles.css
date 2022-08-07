@@ -126,9 +126,14 @@ section {
 }
 
 p.plan-price {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 800;
   margin-bottom: 25px;
+}
+p.plan-price::first-letter {
+  font-size: 3.5rem;
+  vertical-align: 10px;
+  padding-right: 10px;
 }
 
 p.storage-cap,
