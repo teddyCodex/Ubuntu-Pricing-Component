@@ -1,0 +1,295 @@
+/*
+## Colors
+
+### Primary
+- Linear Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%)
+
+### Neutral
+- Very Light Grayish Blue: hsl(240, 78%, 98%)
+- Light Grayish Blue: hsl(234, 14%, 74%)
+- Grayish Blue: hsl(233, 13%, 49%)
+- Dark Grayish Blue: hsl(232, 13%, 33%)
+
+
+### Font
+font-family: 'Montserrat', sans-serif;
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --debug-red: 1px solid red;
+  --debug-blue: 1px solid blue;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+}
+
+/* img {
+  border: var(--debug-red);
+} */
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* STYLING THE MAIN HTML */
+
+.container {
+  /* border: var(--debug-red); */
+  max-width: 900px;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container section:first-child h1 {
+  color: hsl(233, 13%, 49%);
+  font-size: 3rem;
+  font-weight: 700;
+}
+.container section:first-of-type {
+  margin-bottom: 4rem;
+}
+
+.container section:nth-child(2) span {
+  color: hsl(233, 13%, 49%);
+  margin: 0 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  align-self: center;
+}
+.container section:nth-of-type(2) {
+  margin-bottom: 8rem;
+}
+
+section {
+  display: flex;
+  max-width: 100%;
+}
+
+.card {
+  /* border: var(--debug-blue); */
+  text-align: center;
+  padding: 0 30px;
+  border-radius: 5px;
+  width: 30rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card:first-of-type,
+.card:last-of-type {
+  background-color: hsl(240, 78%, 98%);
+  align-self: center;
+  justify-content: center;
+  color: #474b5e;
+}
+
+.card:nth-of-type(2) {
+  width: 32rem;
+  height: 43rem;
+  justify-content: center;
+  color: hsl(240, 78%, 98%);
+}
+
+.card p {
+  font-weight: 600;
+}
+
+.card.card2 {
+  background: linear-gradient(#9194ed, #787de0);
+  border-top: red;
+}
+
+.card .plan-name {
+  font-size: 1.5rem;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+p.plan-price {
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+p.storage-cap,
+p.allowed-users {
+  border-top: 1px solid #dedfdf;
+  padding: 15px;
+  font-size: 1.3rem;
+}
+
+p.send-limit {
+  border-top: 1px solid #dedfdf;
+  border-bottom: 1px solid #dedfdf;
+  padding: 15px;
+  font-size: 1.3rem;
+}
+
+.card button {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #9194ed;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: hsl(240, 78%, 98%);
+  transition: background-color 0.15s ease-in;
+}
+
+.card:nth-of-type(1) button,
+.card:nth-of-type(3) button {
+  transition: background-color 0.15s ease-in;
+  background-color: #787de0;
+  color: hsl(240, 78%, 98%);
+}
+
+/* TOGGLE BUTTON */
+.toggle {
+  width: 300px;
+  justify-content: center;
+}
+.toggle span {
+  flex: 0 1 auto;
+}
+.toggle label {
+  flex: 0 1 70px;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c9c8f4;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  background-color: #fefffe;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #9194ed;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #9194ed;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* MEDIA QUERIES */
+/* 940px */
+@media screen and (min-width: 940px) {
+  .card button:hover {
+    background: none;
+    color: hsl(240, 78%, 98%);
+    outline: 1px solid hsl(240, 78%, 98%);
+  }
+  .card:nth-of-type(1) button:hover,
+  .card:nth-of-type(3) button:hover {
+    background: transparent;
+    color: #9194ed;
+    outline: 1px solid #9194ed;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  body {
+    overflow-y: auto;
+  }
+  .container {
+    max-width: 800px;
+    height: auto;
+    padding: 50px 0;
+  }
+  .card:first-of-type {
+    align-self: auto;
+  }
+}
+
+/* 700px */
+@media screen and (max-width: 700px) {
+  section#section-1 {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .card:nth-of-type(2) {
+    width: 30rem;
+    height: 40rem;
+  }
+}
+
+/* 300px */
+@media screen and (max-width: 300px) {
+  .card {
+    width: 25rem;
+  }
+  .card:nth-of-type(2) {
+    width: 25rem;
+  }
+}
+
+.hidden {
+  display: none;
+}
